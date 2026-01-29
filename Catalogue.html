@@ -1,0 +1,29 @@
+<body>
+    <section class="section-padding fade-in-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1>Nos Abonnements Saisonniers</h1>
+                <p class="lead text-muted">Box mensuelle de 5 échantillons de parfums de niche.</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            });
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
