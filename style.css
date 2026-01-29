@@ -13,7 +13,6 @@ body {
     color: #2C2C2C;
     line-height: 1.8;
     overflow-x: hidden;
-    /* Applique l'animation à tout le corps de la page */
     animation: pageFadeIn 0.8s ease-out forwards;
 }
 
@@ -28,25 +27,16 @@ h1, h2, h3, h4 {
     color: var(--primary-green);
 }
 
-/* --- ANIMATIONS AU SCROLL (Fade In Section) --- */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    will-change: opacity, visibility;
-}
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: none;
-}
-
-/* --- NAVIGATION --- */
+/* --- NAVIGATION PLUS FINE --- */
 .navbar {
     background-color: #F9F7F2;
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* Réduit de 1rem à 0.5rem pour affiner le bandeau */
     transition: all 0.3s;
 }
-.navbar-brand img { height: 65px; width: auto; }
+.navbar-brand img { 
+    height: 50px; /* Réduit de 65px à 50px pour un logo plus discret */
+    width: auto; 
+}
 .nav-link {
     color: var(--primary-green) !important;
     text-transform: uppercase;
@@ -68,7 +58,7 @@ h1, h2, h3, h4 {
 /* --- HERO & FORMULAIRE --- */
 .hero-full {
     min-height: 100vh;
-    padding-top: 180px; /* Marge corrigée pour l'accueil */
+    padding-top: 180px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -150,7 +140,7 @@ h1, h2, h3, h4 {
     margin-top: 10px;
 }
 
-/* --- BOUTONS --- */
+/* --- BOUTONS & ANIMATIONS --- */
 .btn-terra {
     background-color: var(--primary-green);
     color: var(--white);
@@ -177,8 +167,17 @@ h1, h2, h3, h4 {
 }
 .btn-outline-terra:hover { background-color: var(--primary-green); color: var(--white); }
 
-/* --- SECTIONS STANDARD --- */
 .section-padding { padding: 80px 0; }
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
 
 /* --- FOOTER --- */
 footer {
@@ -190,9 +189,8 @@ footer {
 footer a { color: #cfcfcf; text-decoration: none; }
 footer a:hover { color: var(--gold); }
 
-/* --- MOBILE --- */
 @media (max-width: 768px) {
     .hero-full { padding-top: 140px; }
     h1 { font-size: 2.5rem; }
-    .navbar-brand img { height: 50px; }
+    .navbar-brand img { height: 40px; }
 }
