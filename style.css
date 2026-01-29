@@ -1,21 +1,26 @@
-/* --- CHARTE GRAPHIQUE TERRA OLFACTA & ANIMATIONS --- */
+/* --- PAGE TRANSITIONS & CHARTE GRAPHIQUE --- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
 
-:root {
-    --primary-green: #3E4E38; /* Vert Olive */
-    --secondary-green: #5A6B53;
-    --bg-cream: #F9F7F2; /* Crème */
-    --gold: #C5A059; /* Or Mat */
-    --white: #FFFFFF;
-    --text-dark: #2C2C2C;
+/* Animation d'apparition de la page */
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 body {
-    background-color: var(--bg-cream);
+    background-color: #F9F7F2; /* Crème */
     font-family: 'Lato', sans-serif;
-    color: var(--text-dark);
+    color: #2C2C2C;
     line-height: 1.8;
     overflow-x: hidden;
+    /* Applique l'animation à tout le corps de la page */
+    animation: pageFadeIn 0.8s ease-out forwards;
+}
+
+:root {
+    --primary-green: #3E4E38;
+    --gold: #C5A059;
+    --white: #FFFFFF;
 }
 
 h1, h2, h3, h4 {
@@ -23,7 +28,7 @@ h1, h2, h3, h4 {
     color: var(--primary-green);
 }
 
-/* --- ANIMATIONS (Fade In) --- */
+/* --- ANIMATIONS AU SCROLL (Fade In Section) --- */
 .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
@@ -37,7 +42,7 @@ h1, h2, h3, h4 {
 
 /* --- NAVIGATION --- */
 .navbar {
-    background-color: var(--bg-cream);
+    background-color: #F9F7F2;
     padding: 1rem 0;
     transition: all 0.3s;
 }
@@ -60,11 +65,13 @@ h1, h2, h3, h4 {
 }
 .nav-link:hover::after { width: 100%; }
 
-/* --- HERO & FORMULAIRE INSCRIPTION --- */
+/* --- HERO & FORMULAIRE --- */
 .hero-full {
-    min-height: 90vh;
+    min-height: 100vh;
+    padding-top: 180px; /* Marge corrigée pour l'accueil */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
     background: linear-gradient(rgba(249, 247, 242, 0.85), rgba(249, 247, 242, 0.95)), url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1920');
     background-size: cover;
     background-position: center;
@@ -80,6 +87,7 @@ h1, h2, h3, h4 {
 .input-group-terra {
     display: flex;
     border-bottom: 2px solid var(--primary-green);
+    background: transparent;
 }
 
 .input-terra {
@@ -92,11 +100,7 @@ h1, h2, h3, h4 {
     color: var(--primary-green);
     outline: none;
 }
-
-/* Astuce pour faire disparaître le placeholder au clic */
-.input-terra:focus::placeholder {
-    color: transparent;
-}
+.input-terra:focus::placeholder { color: transparent; }
 
 .btn-ok {
     background-color: var(--primary-green);
@@ -108,8 +112,42 @@ h1, h2, h3, h4 {
     cursor: pointer;
     transition: background 0.3s;
 }
-.btn-ok:hover {
-    background-color: var(--gold);
+.btn-ok:hover { background-color: var(--gold); }
+
+/* --- ELEMENTS DE CATALOGUE --- */
+.product-card {
+    background: var(--white);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+    height: 100%;
+    overflow: hidden;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+.product-img-wrapper {
+    height: 300px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+.product-card:hover .product-img-wrapper img { transform: scale(1.05); }
+
+.price-tag {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-top: 10px;
 }
 
 /* --- BOUTONS --- */
@@ -124,17 +162,37 @@ h1, h2, h3, h4 {
     font-size: 0.8rem;
     transition: 0.3s;
 }
-.btn-terra:hover {
+.btn-terra:hover { background-color: transparent; color: var(--primary-green); }
+
+.btn-outline-terra {
     background-color: transparent;
     color: var(--primary-green);
+    border: 1px solid var(--primary-green);
+    padding: 12px 28px;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
 }
+.btn-outline-terra:hover { background-color: var(--primary-green); color: var(--white); }
+
+/* --- SECTIONS STANDARD --- */
+.section-padding { padding: 80px 0; }
 
 /* --- FOOTER --- */
 footer {
     background-color: var(--primary-green);
-    color: var(--bg-cream);
+    color: #F9F7F2;
     padding: 50px 0;
     margin-top: auto;
 }
 footer a { color: #cfcfcf; text-decoration: none; }
 footer a:hover { color: var(--gold); }
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .hero-full { padding-top: 140px; }
+    h1 { font-size: 2.5rem; }
+    .navbar-brand img { height: 50px; }
+}
