@@ -17,31 +17,44 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Par défaut (Mobile) : On réduit la marge pour éviter le "grand vide" */
-        .contact-section-spacing {
-            margin-top: 120px; 
+        /* --- CORRECTION CRITIQUE DES MARGES --- */
+        
+        /* 1. Configuration Mobile par défaut */
+        /* On augmente l'espace pour que le titre "Olfacta" ne soit pas caché par le menu burger */
+        .contact-spacing {
+            padding-top: 150px; 
         }
 
-        /* Sur Ordinateur (Écrans larges) : On garde la grande marge uniforme aux autres pages */
+        /* 2. Configuration Ordinateur (Écrans larges) */
+        /* On force un grand espace car votre police de titre est très grande */
         @media (min-width: 992px) {
-            .contact-section-spacing {
-                margin-top: 180px;
+            .contact-spacing {
+                padding-top: 220px; /* Augmenté pour éviter que "Contactez" soit coupé */
             }
         }
-        
-        /* Transition de page */
+
+        /* --- TRANSITIONS FLUIDES --- */
         body {
+            /* Animation douce à l'ouverture de la page */
             animation: pageFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            background-color: #F9F7F2; /* Couleur crème de fond pour éviter le flash blanc */
         }
+
         @keyframes pageFadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #F9F7F2;">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="images/Logo%20Terra%20Olfacta.jpg" alt="Logo Terra Olfacta - Contact">
@@ -60,7 +73,7 @@
         </div>
     </nav>
 
-    <section class="section-padding fade-in-section contact-section-spacing">
+    <section class="contact-spacing fade-in-section pb-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -120,7 +133,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer style="margin-top: auto;">
         <div class="container text-center">
             <p class="mb-0">&copy; 2026 Terra Olfacta. Tous droits réservés.</p>
         </div>
@@ -128,6 +141,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Animation des éléments au scroll
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
