@@ -11,12 +11,13 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Box & Maisons Partenaires | Terra Olfacta</title>
+    <title>Nos Abonnements & Maisons Partenaires | Terra Olfacta</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Style spécifique pour la liste des partenaires */
+        /* Style des badges partenaires */
         .partner-badge {
             background-color: #fff;
             border: 1px solid #e0e0e0;
@@ -30,11 +31,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 0.95rem;
         }
         .partner-badge:hover {
             border-color: #3E4E38;
             background-color: #F9F7F2;
             transform: translateY(-2px);
+        }
+        
+        /* Uniformisation de la hauteur des cartes d'abonnement */
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+        .mt-auto {
+            margin-top: auto;
+        }
+        
+        /* Ajustements responsive spécifiques */
+        @media (max-width: 768px) {
+            .partner-badge {
+                font-size: 0.85rem;
+                padding: 10px 5px;
+            }
         }
     </style>
 </head>
@@ -61,55 +80,69 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h1>Nos Abonnements Saisonniers</h1>
-                <p class="lead text-muted">Recevez chaque saison une <strong>sélection exclusive</strong> pour élever vos sens.</p>
+                <p class="lead text-muted">
+                    Vivez la <strong>Slow Parfumerie</strong> à domicile. [cite_start]Recevez chaque saison 5 à 6 échantillons (2 à 5 ml) sélectionnés par nos experts, testez-les à votre rythme, et choisissez votre signature sans risque de regret[cite: 209, 214, 248].
+                </p>
             </div>
 
             <div class="row g-4 justify-content-center">
                 
                 <div class="col-md-4">
-                    <div class="product-card">
+                    <div class="product-card h-100">
                         <div class="product-img-wrapper">
-                            <img src="images/Image%20Ctalogue%20Terra.jpg" alt="Coffret parfum de niche Terra Olfacta">
+                            <img src="images/Image%20Ctalogue%20Terra.jpg" alt="Abonnement Discovery Terra Olfacta">
                         </div>
                         <div class="card-body p-4 text-center">
-                            <h3>Box Terra</h3>
-                            <p class="text-muted fst-italic">"L’essence de la matière"</p>
-                            <p class="small">Une sélection <strong>brute et authentique</strong>. Idéale pour découvrir les notes <strong>boisées et terriennes</strong>.</p>
+                            <h3>Abonnement Discovery</h3>
+                            <p class="small mt-3 text-muted">
+                                L'initiation idéale au monde de la niche. <br>
+                                Cette formule est notre porte d'entrée pour découvrir des créateurs rares. [cite_start]Chaque saison, après votre phase de test à domicile, recevez votre coup de cœur en <strong>flacon de 50 ml</strong>[cite: 367].
+                            </p>
                             <hr>
-                            <p class="price-tag"><strong>745 € / an</strong></p>
-                            <a href="contact.html" class="btn btn-outline-terra w-100 mt-2">Choisir</a>
+                            <div class="mt-auto">
+                                <p class="price-tag"><strong>745 € / an</strong></p>
+                                <a href="contact.html" class="btn btn-outline-terra w-100 mt-2">Choisir</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="product-card">
+                    <div class="product-card h-100">
                         <div class="product-img-wrapper">
-                            <img src="images/Image%20Ctalogue%20Astra.jpg" alt="Coffret parfum de niche Astra">
+                            <img src="images/Image%20Ctalogue%20Astra.jpg" alt="Abonnement Signature Terra Olfacta">
                         </div>
                         <div class="card-body p-4 text-center">
-                            <h3>Box Astra</h3>
-                            <p class="text-muted fst-italic">"L’élévation des sens"</p>
-                            <p class="small">Des fragrances <strong>aériennes et spirituelles</strong> pour ceux qui cherchent l'<strong>originalité absolue</strong>.</p>
+                            <h3>Abonnement Signature</h3>
+                            <p class="small mt-3 text-muted">
+                                Pour une présence olfactive affirmée et durable. <br>
+                                [cite_start]Conçue pour ceux qui portent leur parfum au quotidien, cette gamme vous offre chaque saison un <strong>flacon généreux de 75 ml</strong>, vous assurant de ne jamais manquer de votre signature[cite: 367].
+                            </p>
                             <hr>
-                            <p class="price-tag"><strong>1 047 € / an</strong></p>
-                            <a href="contact.html" class="btn btn-terra w-100 mt-2">Choisir</a>
+                            <div class="mt-auto">
+                                <p class="price-tag"><strong>1 047 € / an</strong></p>
+                                <a href="contact.html" class="btn btn-terra w-100 mt-2">Choisir</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="product-card">
+                    <div class="product-card h-100">
                         <div class="product-img-wrapper">
-                            <img src="images/Image%20Ctalogue%20Aether.jpg" alt="Coffret parfum de niche Aether">
+                            <img src="images/Image%20Ctalogue%20Aether.jpg" alt="Abonnement Prestige Terra Olfacta">
                         </div>
                         <div class="card-body p-4 text-center">
-                            <h3>Box Aether</h3>
-                            <p class="text-muted fst-italic">"La quintessence olfactive"</p>
-                            <p class="small">L'<strong>ultime expérience</strong>. Les ingrédients les <strong>plus rares</strong> pour les nez les plus exigeants.</p>
+                            <h3>Abonnement Prestige</h3>
+                            <p class="small mt-3 text-muted">
+                                Le sommet de l'expérience, pour les collectionneurs.<br>
+                                Accédez à l'exclusivité absolue et aux éditions les plus rares. Couronnez votre découverte saisonnière par un <strong>flacon majestueux de 100 ml</strong>. [cite_start]L'offre ultime pour les passionnés sans compromis[cite: 367].
+                            </p>
                             <hr>
-                            <p class="price-tag"><strong>1 468 € / an</strong></p>
-                            <a href="contact.html" class="btn btn-outline-terra w-100 mt-2">Choisir</a>
+                            <div class="mt-auto">
+                                <p class="price-tag"><strong>1 468 € / an</strong></p>
+                                <a href="contact.html" class="btn btn-outline-terra w-100 mt-2">Choisir</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,7 +159,7 @@
                 </div>
                 <div class="col-md-7 ps-md-5">
                     <h2>La Boutique en Ligne</h2>
-                    <p>Vous avez craqué pour un échantillon de votre box ? <strong>Commandez le flacon grand format</strong> directement ici.</p>
+                    <p>Vous avez craqué pour un échantillon de votre box ? [cite_start]<strong>Commandez le flacon grand format</strong> directement ici, hors abonnement[cite: 360, 479].</p>
                     
                     <div class="mt-4 p-4 border bg-light text-center rounded">
                         <p class="mb-3 text-muted">
@@ -144,7 +177,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2>Nos Maisons Partenaires</h2>
-                <p class="text-muted">Nous collaborons avec les créateurs les plus audacieux pour composer vos box.</p>
+                [cite_start]<p class="text-muted">Une curation rigoureuse auprès des créateurs les plus audacieux[cite: 211, 593].</p>
             </div>
             
             <div class="row justify-content-center">
@@ -152,7 +185,6 @@
                     <div class="row g-3 row-cols-2 row-cols-md-4">
                         <div class="col"><div class="partner-badge">Maison Francis Kurkdjian</div></div>
                         <div class="col"><div class="partner-badge">Trudon</div></div>
-                        <div class="col"><div class="partner-badge">Yves Saint Laurent</div></div>
                         <div class="col"><div class="partner-badge">BDK Parfums</div></div>
                         <div class="col"><div class="partner-badge">Byredo</div></div>
                         <div class="col"><div class="partner-badge">Serge Lutens</div></div>
